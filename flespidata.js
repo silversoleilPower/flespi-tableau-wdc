@@ -7,10 +7,10 @@
 		dataType: tableau.dataTypeEnum.int
 	    }, {
 		id: "latitude",
-		dataType: tableau.dataTypeEnum.geometry
+		dataType: tableau.dataTypeEnum.float
 	    }, {
 	    id: "longitude",
-		dataType: tableau.dataTypeEnum.geometry
+		dataType: tableau.dataTypeEnum.float
 	    }, {
 	    id: "altitude",
 		dataType: tableau.dataTypeEnum.float
