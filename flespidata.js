@@ -4,13 +4,19 @@
     myConnector.getSchema = function (schemaCallback) {
 	var cols = [{
 		id: "time",
-		dataType: tableau.dataTypeEnum.string
+		dataType: tableau.dataTypeEnum.int
 	    }, {
 		id: "latitude",
 		dataType: tableau.dataTypeEnum.geometry
 	    }, {
 	    id: "longitude",
 		dataType: tableau.dataTypeEnum.geometry
+	    }, {
+	    id: "altitude",
+		dataType: tableau.dataTypeEnum.float
+	    }, {
+	    id: "ignition",
+		dataType: tableau.dataTypeEnum.bool
 	    }, {
 	    id: "speed",
 		dataType: tableau.dataTypeEnum.float
@@ -47,6 +53,8 @@
 				        "time": feat[i].timestamp,
 				        "latitude": feat[i]["position.latitude"],
 				        "longitude": feat[i]["position.longitude"],
+				        "altitude": feat[i]["position.altitude"],
+				        "ignition": feat[i]["engine.ignition.status"],
 				        "speed": feat[i]["position.speed"]
 				    });
 				}
