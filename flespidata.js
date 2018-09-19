@@ -6,6 +6,9 @@
 		id: "time",
 		dataType: tableau.dataTypeEnum.int
 	    }, {
+		id: "ident",
+		dataType: tableau.dataTypeEnum.string
+	    }, {
 		id: "latitude",
 		dataType: tableau.dataTypeEnum.float
 	    }, {
@@ -42,7 +45,7 @@
     };
 
     myConnector.getData = function(table, doneCallback) {
-    	$.ajax("https://flespi.io/gw/devices/5811/messages?data=%7B%22count%22%3A1000%2C%22method%22%3A%22average%22%7D", {
+    	$.ajax("https://flespi.io/gw/devices/" + localStorage.getItem("device") + "/messages?data=%7B%22count%22%3A1000%2C%22method%22%3A%22average%22%7D", {
     		success: function(resp) {
 		    	var feat = resp.result,
 		        	tableData = [];
@@ -51,6 +54,7 @@
 				for (var i = 0, len = feat.length; i < len; i++) {
 				    tableData.push({
 				        "time": feat[i].timestamp,
+				        "ident": feat[i].ident,
 				        "latitude": feat[i]["position.latitude"],
 				        "longitude": feat[i]["position.longitude"],
 				        "altitude": feat[i]["position.altitude"],
@@ -64,7 +68,7 @@
 			},
 			headers: {
 				"Accept": "application/json",
-				"Authorization":"FlespiToken eABpFu7l33yt4yHrRg9lDj1UTsbTZne1NDgjYesP7Q6ZeBfTIe29nUT4aVNZ6QRJ"
+				"Authorization":"FlespiToken " + localStorage.getItem("token")
 			}
 		});
 	};
@@ -73,11 +77,11 @@
 
 $(document).ready(function () {
     $("#submitButton").click(function () {
+    	localStorage.setItem("token", $('#input_token').val())
+    	localStorage.setItem("device", $('#input_device').val())
         tableau.connectionName = "flespidata";
         tableau.submit();
     });
 });
 
 })();
-
-
