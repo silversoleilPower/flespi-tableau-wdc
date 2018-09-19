@@ -45,7 +45,7 @@
     };
 
     myConnector.getData = function(table, doneCallback) {
-    	$.ajax("https://flespi.io/gw/devices/" + localStorage.getItem("device") + "/messages?data=%7B%22count%22%3A1000%2C%22method%22%3A%22average%22%7D", {
+   		$.ajax("https://flespi.io/gw/devices/" + tableau.device + "/messages?data=%7B%22count%22%3A1000%2C%22method%22%3A%22average%22%7D", {
     		success: function(resp) {
 		    	var feat = resp.result,
 		        	tableData = [];
@@ -68,7 +68,7 @@
 			},
 			headers: {
 				"Accept": "application/json",
-				"Authorization":"FlespiToken " + localStorage.getItem("token")
+				"Authorization":"FlespiToken " + tableau.token
 			}
 		});
 	};
@@ -77,9 +77,11 @@
 
 $(document).ready(function () {
     $("#submitButton").click(function () {
-    	localStorage.setItem("token", $('#input_token').val())
-    	localStorage.setItem("device", $('#input_device').val())
+    	//localStorage.setItem("token", $('#input_token').val())
+    	//localStorage.setItem("device", $('#input_device').val())
         tableau.connectionName = "flespidata";
+        tableau.token = $('#input_token').val()
+        tableau.device = $('#input_device').val()
         tableau.submit();
     });
 });
