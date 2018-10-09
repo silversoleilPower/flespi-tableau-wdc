@@ -28,21 +28,12 @@
 		columns: cols
 	    };
 
-	    //incremental refresh
-	/*var tableInfo = {
-        alias: "Incremental Refresh Connector",
-        id: "flespidata",
-        columns: cols,
-        incrementColumnId: "id"
-    };*/
-
 	    schemaCallback([tableSchema]);
-	    //schemaCallback([tableInfo]);
 
     };
 
     myConnector.getData = function(table, doneCallback) {
-   		$.ajax("https://flespi.io/gw/devices/" + tableau.connectionData + "/messages?data=%7B%22count%22%3A1000%2C%22method%22%3A%22average%22%2C%22reverse%22%3Atrue%7D", {
+   		$.ajax("https://flespi.io/gw/devices/" + tableau.connectionData + "/messages?data=%7B%22count%22%3A" + tableau.platformEdition + "%2C%22method%22%3A%22average%22%2C%22reverse%22%3Atrue%7D", {
     		success: function(resp) {
 		    	var feat = resp.result,
 		        	tableData = [];
@@ -55,10 +46,10 @@
 				        "longitude": feat[i]["position.longitude"],
 				        "altitude": feat[i]["position.altitude"],
 				        "ignition": feat[i]["engine.ignition.status"],
-				        "speed": feat[i]["position.speed"]
-				    });
+				        "speed": feat[i]["position.speed"],
+				     });
 				}
-
+				// append rows (messages) to the table
 				table.appendRows(tableData);
 				doneCallback();
 			},
@@ -73,16 +64,13 @@
 
 $(document).ready(function () {
     $("#submitButton").click(function () {
-    	//localStorage.setItem("token", $('#input_token').val())
-    	//localStorage.setItem("device", $('#input_device').val())
-        tableau.connectionName = "flespidata";
+    	tableau.connectionName = "flespidata";
+        // flespi token
         tableau.password = $("#input_token").val();
+        // flespi device ID
         tableau.connectionData = $("#input_device").val();
-        //tableau.connectionData = {}
-        //tableau.connectionData.token = $("#input_token").val();
-        //tableau.connectionData.deviceId = $("#input_device").val();
-        //var tableau.token = document.getElementById("input_token").value;
-        //var tableau.device = document.getElementById("input_device").value;
+        //number of messages to fetch
+        tableau.platformEdition = $("#input_messages").val(); 
         tableau.submit();
     });
 });
