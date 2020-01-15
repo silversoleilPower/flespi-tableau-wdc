@@ -33,7 +33,8 @@
     };
 
     myConnector.getData = function(table, doneCallback) {
-   		$.ajax("https://flespi.io/gw/devices/" + tableau.connectionData + "/messages?data=%7B%22count%22%3A" + tableau.platformEdition + "%2C%22method%22%3A%22average%22%2C%22reverse%22%3Atrue%7D", {
+	        var tmpdata = JSON.parse(tableau.connectionData);
+   		$.ajax("https://flespi.io/gw/devices/" + tmpdata.deviceid + "/messages?data=%7B%22count%22%3A" + tmpdata.messagescount + "%2C%22method%22%3A%22average%22%2C%22reverse%22%3Atrue%7D", {
     		success: function(resp) {
 		    	var feat = resp.result,
 		        	tableData = [];
@@ -66,11 +67,8 @@ $(document).ready(function () {
     $("#submitButton").click(function () {
     	tableau.connectionName = "flespidata";
         // flespi token
-        tableau.password = $("#input_token").val();
-        // flespi device ID
-        tableau.connectionData = $("#input_device").val();
-        //number of messages to fetch
-        tableau.platformEdition = $("#input_messages").val(); 
+        tableau.password = $("#input_token").val(); 
+        tableau.connectionData = JSON.stringify({messagescount: $("#input_messages").val(), deviceid: parseInt($("#input_device").val())})
         tableau.submit();
     });
 });
