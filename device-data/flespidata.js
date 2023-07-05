@@ -109,12 +109,12 @@
 		dataType: tableau.dataTypeEnum.float
 		}
 	    	{
-		id: "Cycles",
-		dataType: tableau.dataTypeEnum.int
+		//id: "Cycles",
+		//dataType: tableau.dataTypeEnum.int
 		}
 	    	{
-		id: "Device_Name",
-		dataType: tableau.dataTypeEnum.string
+		//id: "Device_Name",
+		//dataType: tableau.dataTypeEnum.string
 		}];
 
 	var tableSchema = {
@@ -168,8 +168,8 @@
 					"Temp_2": feat[i]["bms.Temp.2"],
 					"Voltage": feat[i]["bms.voltage"],
 					"Current": feat[i]["bms.current"],
-					"Cycles": feat[i]["bms.cycles"],
-					"Device_Name": feat[i]["device.name"],
+					//"Cycles": feat[i]["bms.cycles"],
+					//"Device_Name": feat[i]["device.name"],
 					    
 				     });
 				}
