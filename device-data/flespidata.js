@@ -20,7 +20,10 @@
 	    }, {
 	    id: "speed",
 		dataType: tableau.dataTypeEnum.float
-	    }];
+	    }, {
+		id: "cell1",
+		dataType: tableau.dataTypeEnum.float
+		}];
 
 	var tableSchema = {
 		id: "flespidata",
@@ -52,6 +55,7 @@
 				        "altitude": feat[i]["position.altitude"],
 				        "ignition": feat[i]["engine.ignition.status"],
 				        "speed": feat[i]["position.speed"],
+					"cell1": feat[i]["bms.cell.1"],
 				     });
 				}
 				// append rows (messages) to the table
