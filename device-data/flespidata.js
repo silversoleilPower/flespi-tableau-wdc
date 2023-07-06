@@ -23,98 +23,98 @@
 	    }, {
 		id: "cell_1",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 		{
 		id: "cell_2",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "cell_3",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "cell_4",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "cell_5",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "cell_6",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "cell_7",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "cell_8",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "cell_1",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "cell_9",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "cell_10",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "cell_11",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "cell_12",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "cell_13",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "cell_14",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "cell_15",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "Remaining_Capacity",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "RSoC",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "Temp_1",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "Temp_2",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "Voltage",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
 		id: "Current",
 		dataType: tableau.dataTypeEnum.float
-		}
+		},
 	    	{
-		//id: "Cycles",
-		//dataType: tableau.dataTypeEnum.int
-		}
+		id: "Cycles",
+		dataType: tableau.dataTypeEnum.int
+		},
 	    	{
-		//id: "Device_Name",
-		//dataType: tableau.dataTypeEnum.string
+		id: "Device_Name",
+		dataType: tableau.dataTypeEnum.string
 		}];
 
 	var tableSchema = {
@@ -168,8 +168,8 @@
 					"Temp_2": feat[i]["bms.Temp.2"],
 					"Voltage": feat[i]["bms.voltage"],
 					"Current": feat[i]["bms.current"],
-					//"Cycles": feat[i]["bms.cycles"],
-					//"Device_Name": feat[i]["device.name"],
+					"Cycles": feat[i]["bms.cycles"],
+					"Device_Name": feat[i]["device.name"],
 					    
 				     });
 				}
