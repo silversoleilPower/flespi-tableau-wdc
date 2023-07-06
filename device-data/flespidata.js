@@ -169,7 +169,7 @@
 					"Voltage": feat[i]["bms.voltage"],
 					"Current": feat[i]["bms.current"],
 					"Cycles": feat[i]["bms.cycles"],
-					"Device_Name": feat[i]["device.name"],
+					//"Device_Name": feat[i]["device.name"],
 					    
 				     });
 				}
