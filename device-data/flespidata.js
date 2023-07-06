@@ -83,6 +83,38 @@
 	    	{
 		id: "Voltage",
 		dataType: tableau.dataTypeEnum.float
+		},
+		{
+		id: "Current",
+		dataType: tableau.dataTypeEnum.float
+		},
+		{
+		id: "Remaining_Capacity",
+		dataType: tableau.dataTypeEnum.float
+		},
+		{
+		id: "RSoC",
+		dataType: tableau.dataTypeEnum.int
+		},
+		{
+		id: "Temp_1",
+		dataType: tableau.dataTypeEnum.float
+		},
+		{
+		id: "Temp_2",
+		dataType: tableau.dataTypeEnum.float
+		},
+		{
+		id: "Cycles",
+		dataType: tableau.dataTypeEnum.int
+		},
+		{
+		id: "Full_Capacity",
+		dataType: tableau.dataTypeEnum.int
+		},
+		{
+		id: "Device_Name",
+		dataType: tableau.dataTypeEnum.string
 		}];
 
 	var tableSchema = {
@@ -131,6 +163,14 @@
 					    "cell_14": feat[i]["bms.cell.14"],
 					    "cell_15": feat[i]["bms.cell.15"],
 					    "Voltage": feat[i]["bms.voltage"],
+					    "Current": feat[i]["bms.current"],
+					    "Remaining_Capacity": feat[i]["bms.remaining.capacity"],
+					    "RSoC": feat[i]["bms.RSoC"],
+					    "Temp_1": feat[i]["bms.Temp.1"],
+					    "Temp_2": feat[i]["bms.Temp.2"],
+					    "Cycles": feat[i]["bms.cycles"],
+					    "Full_Capacity": feat[i]["bms.Full.capacity"],
+					    "Device_Name": feat[i]["device.name"],
 				     });
 				}
 				// append rows (messages) to the table
