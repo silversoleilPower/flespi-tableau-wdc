@@ -21,67 +21,7 @@
 	    id: "speed",
 		dataType: tableau.dataTypeEnum.float
 	    }, {
-		id: "cell_1",
-		dataType: tableau.dataTypeEnum.float
-		},
-		{
-		id: "cell_2",
-		dataType: tableau.dataTypeEnum.float
-		},
-	    	{
-		id: "cell_3",
-		dataType: tableau.dataTypeEnum.float
-		},
-	    	{
-		id: "cell_4",
-		dataType: tableau.dataTypeEnum.float
-		},
-	    	{
-		id: "cell_5",
-		dataType: tableau.dataTypeEnum.float
-		},
-	    	{
-		id: "cell_6",
-		dataType: tableau.dataTypeEnum.float
-		},
-	    	{
-		id: "cell_7",
-		dataType: tableau.dataTypeEnum.float
-		},
-	    	{
-		id: "cell_8",
-		dataType: tableau.dataTypeEnum.float
-		},
-	    	{
-		id: "cell_1",
-		dataType: tableau.dataTypeEnum.float
-		},
-	    	{
-		id: "cell_9",
-		dataType: tableau.dataTypeEnum.float
-		},
-	    	{
-		id: "cell_10",
-		dataType: tableau.dataTypeEnum.float
-		},
-	    	{
-		id: "cell_11",
-		dataType: tableau.dataTypeEnum.float
-		},
-	    	{
-		id: "cell_12",
-		dataType: tableau.dataTypeEnum.float
-		},
-	    	{
-		id: "cell_13",
-		dataType: tableau.dataTypeEnum.float
-		},
-	    	{
-		id: "cell_14",
-		dataType: tableau.dataTypeEnum.float
-		},
-	    	{
-		id: "cell_15",
+		id: "cell1",
 		dataType: tableau.dataTypeEnum.float
 		}];
 
@@ -115,21 +55,7 @@
 				        "altitude": feat[i]["position.altitude"],
 				        "ignition": feat[i]["engine.ignition.status"],
 				        "speed": feat[i]["position.speed"],
-					"cell_1": feat[i]["bms.cell.1"],
-					"cell_2": feat[i]["bms.cell.2"],
-					"cell_3": feat[i]["bms.cell.3"],
-					"cell_4": feat[i]["bms.cell.4"],
-					"cell_5": feat[i]["bms.cell.5"],
-					"cell_6": feat[i]["bms.cell.6"],
-					"cell_7": feat[i]["bms.cell.7"],
-					"cell_8": feat[i]["bms.cell.8"],
-					"cell_9": feat[i]["bms.cell.9"],
-					"cell_10": feat[i]["bms.cell.10"],
-					"cell_11": feat[i]["bms.cell.11"],
-					"cell_12": feat[i]["bms.cell.12"],
-					"cell_13": feat[i]["bms.cell.13"],
-					"cell_14": feat[i]["bms.cell.14"],
-					"cell_15": feat[i]["bms.cell.15"],
+					"cell1": feat[i]["bms.cell.1"],
 					    
 				     });
 				}
