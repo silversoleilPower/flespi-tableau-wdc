@@ -23,7 +23,19 @@
 	    },{
 		id: "cell_1",
 		dataType: tableau.dataTypeEnum.float
-		}];
+		},
+		{
+		id: "cell_2",
+		dataType: tableau.dataTypeEnum.float
+		},
+	    	{
+		id: "cell_3",
+		dataType: tableau.dataTypeEnum.float
+		},
+	    	{
+		id: "cell_4",
+		dataType: tableau.dataTypeEnum.float
+		} ];
 
 	var tableSchema = {
 		id: "flespidata",
@@ -56,6 +68,9 @@
 				        "ignition": feat[i]["engine.ignition.status"],
 				        "speed": feat[i]["position.speed"],
 					    "cell_1": feat[i]["bms.cell.1"],
+					    "cell_2": feat[i]["bms.cell.2"],
+					    "cell_3": feat[i]["bms.cell.3"],
+					    "cell_4": feat[i]["bms.cell.4"],
 				     });
 				}
 				// append rows (messages) to the table
