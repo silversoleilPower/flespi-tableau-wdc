@@ -90,7 +90,7 @@
 		},
 	    	{
 		id: "RSoC",
-		dataType: tableau.dataTypeEnum.float
+		dataType: tableau.dataTypeEnum.int
 		},
 	    	{
 		id: "Temp_1",
